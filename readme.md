@@ -1,6 +1,6 @@
-# Stargazer
+# Gladiator
 
-Stargazer is a web application that uses github to display game status.
+Gladiator is a web application that uses github to display game status.
 
 ## Status list
 

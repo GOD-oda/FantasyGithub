@@ -1,9 +1,22 @@
 
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import "./fonts";
 
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Noto Sans Japanese", 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  background: url('/img/free5.jpeg') no-repeat fixed left bottom;
+  background-size: cover;
+  font-weight: 200;
+}
+
+// partials
+@import "partials/top";

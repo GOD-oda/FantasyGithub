@@ -28,7 +28,7 @@
                 あなたがFantasyGithubで行動すれば自ずとあなた自身を成長させることでしょう。<br><br>
                 今こそ新しい扉を開く時です。<br>
                 素晴らしい世界でお会いできることを楽しみにしています。<br><br>
-                <a href="{{ url('register') }}" class="btn btn-lg open-door">扉を開く</a><a href="#" class="btn btn-lg close-door">扉を閉じる</a>
+                <a href="{{ url('login') }}" class="btn btn-lg open-door">扉を開く</a><a href="#" class="btn btn-lg close-door">扉を閉じる</a>
             </p>
         </div>
 

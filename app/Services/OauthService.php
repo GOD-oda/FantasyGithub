@@ -25,11 +25,7 @@ class OauthService extends Service
 
     public function callback()
     {
-        try {
-            $github_user = $this->githubRepo->getUser();
-        } catch (\Execption $e) {
-            return redirect('/');
-        }
+        $github_user = $this->githubRepo->getUser();
 
         $attributes = [
             'name' => $github_user->getName(),

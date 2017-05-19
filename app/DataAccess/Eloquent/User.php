@@ -15,6 +15,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'provider_id',
+        'name', 'email',
     ];
+
+    public function accounts()
+    {
+        return $this->hasMany('App\DataAccess\Eloquent\SocialAccount');
+    }
 }

@@ -21,6 +21,12 @@ class LoginController extends Controller
 
     public function callback()
     {
-        return $this->oauth->callback();
+        try {
+            $this->oauth->githubCallback();
+        } catch (\Exception $e) {
+            return redirect('/');
+        }
+
+        return redirect('/home');
     }
 }

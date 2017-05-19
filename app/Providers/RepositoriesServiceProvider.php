@@ -32,5 +32,10 @@ class RepositoriesServiceProvider extends ServiceProvider
             \App\Repositories\UserRepositoryInterface::class,
             \App\Repositories\UserRepository::class
         );
+
+        $this->app->bind(
+            \App\Repositories\SocialAccountRepositoryInterface::class,
+            \App\Repositories\SocialAccountRepository::class
+        );
     }
 }

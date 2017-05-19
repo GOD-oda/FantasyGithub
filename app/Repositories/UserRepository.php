@@ -13,8 +13,16 @@ class UserRepository implements UserRepositoryInterface
         $this->user = $user;
     }
 
-    public function save(array $attributes, array $columns)
+    public function save($social_account, string $provider_name)
     {
-        return $this->user->firstOrCreate($attributes, $columns);
+        $attributes = ['email' => $social_account->email];
+        $values = ['name' => $social_account->name];
+        $user = $this->user->firstOrCreate($attributes, $values);
+        $user->accounts()->create([
+            'provider_id' => $social_account->getId(),
+            'provider_name' => $provider_name,
+        ]);
+
+        return $user;
     }
 }

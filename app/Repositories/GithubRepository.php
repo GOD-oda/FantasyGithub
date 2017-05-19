@@ -2,45 +2,24 @@
 
 namespace App\Repositories;
 
-use Laravel\Socialite\Contracts\Factory as Socialite;
-use App\DataAccess\Eloquent\User;
+use Laravel\Socialite\Contracts\Factory as  Socialite;
 
 class GithubRepository implements GithubRepositoryInterface
 {
-    protected $githubProvider;
+    protected $socialite;
 
     public function __construct(Socialite $socialite)
     {
-        $this->githubProvider = $socialite->driver('github');
+        $this->socialite = $socialite->driver('github');
     }
 
-    /**
-     * Redirect to github provider.
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function redirect()
     {
-        return $this->githubProvider->redirect();
+        return $this->socialite->redirect();
     }
-
 
     public function getUser()
     {
-        return $this->githubProvider->user();
-    }
-
-    public function getId()
-    {
-        return $this->getUser()->getId();
-    }
-
-    public function getEmail()
-    {
-        return $this->getUser()->getEmail();
-    }
-
-    public function getName()
-    {
-        return $this->getUser()->getName();
+        return $this->socialite->user();
     }
 }
